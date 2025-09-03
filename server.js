@@ -11,8 +11,8 @@ app.use(express.json());
 // MongoDB Verbindung
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/deutsches-sprachtraining';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB verbunden...'))
-  .catch(err => console.log(err));
+  .then(() => console.log('Erfolgreich mit MongoDB verbunden.'))
+  .catch(err => console.log('Fehler beim Verbinden mit MongoDB:', err));
 
 // Beispielroute
 app.get('/', (req, res) => {
