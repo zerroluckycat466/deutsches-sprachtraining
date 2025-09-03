@@ -9,7 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Verbindung
-mongoose.connect('mongodb://localhost/deutsches-sprachtraining', { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/deutsches-sprachtraining';
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB verbunden...'))
   .catch(err => console.log(err));
 
